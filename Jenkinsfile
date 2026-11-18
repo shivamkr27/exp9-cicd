@@ -40,7 +40,7 @@ pipeline {
             steps {
                 script {
                     def existingContainer = sh(
-                        script: "docker ps -aq --filter name=^${env.CONTAINER_NAME}$",
+                        script: 'docker ps -aq --filter name=^' + env.CONTAINER_NAME + '$',
                         returnStdout: true
                     ).trim()
                     if (existingContainer) {
